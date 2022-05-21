@@ -13,7 +13,7 @@
     <div class="container-fluid py-4">
         <div class="card mb-4">
             <div class="card-header pb-0">
-                <a class="btn btn-primary float-end">New User</a>
+                <a href="add.php" class="btn btn-primary float-end">New User</a>
                 <h6>User</h6>
             </div>
             <div class="card-body">
