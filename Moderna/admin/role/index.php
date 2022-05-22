@@ -17,7 +17,7 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Role</th><th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Submitted before</th> -->
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Role</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
@@ -25,15 +25,15 @@
                   <tbody>
                     <tr>
                       <td class="align-middle text-center">
-                          <!-- <?= $i++ ?> -->
+                          1
                       </td>
                       <td>
-                        <!-- <p class="text-xs font-weight-bold mb-0">Role</p> -->
+                        <p class="text-xs font-weight-bold mb-0">Role</p>
                       </td>
                       <td class="align-middle text-center">
-                        <!-- <a href="add.html">
+                        <a href="add.html">
                         <i class="fa fa-upload" aria-hidden="true"></i>
-                        </a> -->
+                        </a>
                       </td>
                     </tr>
                   </tbody>
