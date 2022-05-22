@@ -61,7 +61,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="team.html">Team</a></li>
-          <li><a class="active" href="contact.html">Contact Us</a></li>
+          <li><a class="active" href="contact.php">Contact Us</a></li>
           <li><a href="auth/sign-in.html">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
