@@ -13,8 +13,6 @@ $query = mysqli_query($conn,$sql);
 $data = mysqli_fetch_assoc($query);
 
 if($data){
-    // var_dump($data['role_name']);
-    // exit;
     switch ($data['role_name']) 
     {
         case "admin":
