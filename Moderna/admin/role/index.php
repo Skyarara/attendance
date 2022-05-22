@@ -1,50 +1,60 @@
+<?php 
+    require_once '../../DB/conn.php';
+
+    $i = 1;
+    $sql = "SELECT * FROM role";
+    $query = mysqli_query($conn,$sql);
+?>
 
 <?php include '../template/header.php' ?>
 <?php include '../template/sidebar.php' ?>
 
-<body class="g-sidenav-show   bg-gray-100">
-  <main class="main-content position-relative border-radius-lg ">
+<main class="main-content position-relative border-radius-lg ">
     <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
+        <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Role</h6>
+                <a href="add.php" class="btn btn-primary float-end">New Role</a>
+                <h6>Role</h6>
             </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Role</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="align-middle text-center">
-                          1
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Role</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <a href="add.html">
-                        <i class="fa fa-upload" aria-hidden="true"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>            
-              </div>
+            <div class="card-body">
+                <div class="table-responsive p-0">
+                    <table class="table table-hover" id="myTable">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    No</th>
+                                <th
+                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Role
+                                </th>
+                                <th
+                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <?php while($data = mysqli_fetch_assoc($query)): ?>
+                            <tr>
+                                <td class="align-middle text-center">
+                                    <?= $i++ ?>
+                                </td>
+                                <td class="align-middle text-center">
+                                    <?= $data['role_name'] ?>
+                                </td>
+                                <td class="align-middle text-center">
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a class="btn btn-warning" href="edit.php?id=<?= $data['id_role'] ?>">Edit</a>
+                                        <a class="btn btn-danger" href="action_delete.php?id=<?= $data['id_role'] ?>"
+                                            onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                          <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </main>
-</body>
-
-<?php include '../template/footer.php' ?>
+        <?php include '../template/footer.php' ?>
