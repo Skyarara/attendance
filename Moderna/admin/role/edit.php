@@ -3,11 +3,10 @@
 
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM role WHERE id_role='$id";
+    $sql = "SELECT * FROM role WHERE id_role='$id'";
     $query = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_assoc($query);
 
-    // var_dump($user);
-    // exit;
 ?>
 
 <?php include '../template/header.php' ?>
@@ -24,17 +23,18 @@
                     </div>
                     <div class="card-body">
                         <form action="action_edit.php" method="post">
-                        <div class="row">
+                            <input type="hidden" name="id" value='<?= $data['id_role'] ?>'>
+                            <div class="row">
                                 <div class="form-group">
                                     <label class="form-control-label">Role Name</label>
                                     <input class="form-control" name="role" type="text"
-                                        value="<?= $role['role_name'] ?>" placeholder="Role Name" required>
+                                        value="<?= $data['role_name'] ?>" placeholder="Role Name" required>
                                 </div>
                             </div>
                             <hr class="horizontal dark">
                             <div class="row">
                                 <div class="col-md">
-                                    <button class="btn btn-primary btn-sm ms-auto float-end">Edit</button>
+                                    <button class="btn btn-warning btn-sm ms-auto float-end">Edit</button>
                                 </div>
                             </div>
                         </form>
