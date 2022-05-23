@@ -64,7 +64,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="team.html">Team</a></li>
           <li><a class="active" href="contact.php">Contact Us</a></li>
-          <li><a href="auth/sign-in.html">Login</a></li>
+          <li><a href="auth/sign-in.php">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -102,21 +102,21 @@
                 <div class="info-box">
                   <i class="bx bx-map"></i>
                   <h3>Our Address</h3>
-                  <p>Araya Mansion No. 8 - 22, Genitri, Tirtomoyo, Kec. Pakis, Kabupaten Malang, Jawa Timur 65154</p>
+                  <p>Araya Mansion No. 8 - 22, Genitri, Tirtomoyo,<br> Kec. Pakis, Kabupaten Malang, Jawa Timur 65154</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bx bx-envelope"></i>
                   <h3>Email Us</h3>
-                  <p>info@example.com<br>contact@example.com</p>
+                  <p>infobinus@binus.edu</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bx bx-phone-call"></i>
                   <h3>Call Us</h3>
-                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                  <p>(0341) 3036969</p>
                 </div>
               </div>
             </div>
