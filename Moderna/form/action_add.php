@@ -11,6 +11,6 @@ $sql = "INSERT INTO contact_us VALUES('', '$name', '$email', '$subject', '$messa
 $query = mysqli_query($conn, $sql);
 
 if($query){
-    header("Location: contact.php");
+    header("Location: ../contact.php");
     exit;
 }

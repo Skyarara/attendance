@@ -102,7 +102,8 @@
                 <div class="info-box">
                   <i class="bx bx-map"></i>
                   <h3>Our Address</h3>
-                  <p>Araya Mansion No. 8 - 22, Genitri, Tirtomoyo,<br> Kec. Pakis, Kabupaten Malang, Jawa Timur 65154</p>
+                  <p>Araya Mansion No. 8 - 22, Genitri, Tirtomoyo,<br> Kec. Pakis, Kabupaten Malang, Jawa Timur 65154
+                  </p>
                 </div>
               </div>
               <div class="col-md-6">
@@ -124,7 +125,7 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="form/action_add.php" method="post" role="form" class="php-email-form">
+            <form action="form/action_add.php" method="POST" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -138,11 +139,6 @@
               </div>
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
@@ -195,7 +191,6 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
