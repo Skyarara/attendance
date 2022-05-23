@@ -6,19 +6,14 @@
     $query2 = mysqli_query($conn,$sql2);
     $data = mysqli_fetch_assoc($query2);
 
-    $corporate = $_SESSION['corporate'];
-    $sql = "SELECT * FROM corporate_employee
-    JOIN user ON user.id_user = corporate_employee.id_corporate_employee
-    WHERE id_corporate='$corporate'";
+    $sql = "SELECT * FROM detail_task
+    JOIN user ON user.id_user = detail_task.id_worker
+    WHERE id_task='$id'";
+
     $query = mysqli_query($conn,$sql);
     
     $sql3 = "SELECT id_worker FROM detail_task WHERE id_task='$id'";
     $query3 = mysqli_query($conn,$sql3);
-
-    $worker = [];
-    while($data2 = mysqli_fetch_assoc($query3)){
-        array_push($worker, $data2['id_worker']);
-    }
 ?>
 
 <?php include '../template/header.php' ?>
@@ -73,11 +68,9 @@
                         <div class="row">
                             <div class="form-group">
                                 <label class="form-control-label">Worker</label>
-                                <?php while($dt = mysqli_fetch_assoc($query)): 
-                                        if(in_array($dt['id_user'], $worker)):
-                                ?>
+                                <?php while($dt = mysqli_fetch_assoc($query)): ?>
                                 <input class="form-control mb-2" type="text" value="<?= $dt['full_name'] ?>" readonly>
-                                <?php endif; endwhile; ?>
+                                <?php endwhile; ?>
                             </div>
                         </div>
                         <hr class="horizontal dark">

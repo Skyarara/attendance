@@ -19,36 +19,10 @@
                     <a class="nav-link" href="../">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../task">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="fa fa-book text-warning text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Task</span>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../manager">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fa fa-user text-warning text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Manager</span>
-                    </a>
-                </li>
-                <a class="nav-link" href="../employee">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa fa-users text-warning text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Employee</span>
-                </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../../auth/logout.php">

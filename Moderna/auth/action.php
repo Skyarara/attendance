@@ -34,7 +34,7 @@ if($data){
             header("Location: ../owner/index.php");
             break;
         case "employee":
-            header("Location: ../employee/index.html");
+            header("Location: ../employee/index.php");
             break;
         case "manager":
             header("Location: ../manager/index.html");
