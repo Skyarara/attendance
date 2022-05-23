@@ -58,7 +58,7 @@
                                 </td>
                                 <td class="align-middle text-center">
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a class="btn btn-primary" href="info.php?id=<?= $data['id_contact_us'] ?>">Info</a>
+                                        <a class="btn btn-info" href="info.php?id=<?= $data['id_contact_us'] ?>">Info</a>
                                         <a class="btn btn-danger" href="action_delete.php?id=<?= $data['id_contact_us'] ?>"
                                             onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                                     </div>
