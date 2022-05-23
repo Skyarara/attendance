@@ -1,8 +1,5 @@
 <?php
     include '../../DB/conn.php';
-
-    $sql = "SELECT * FROM role";
-    $query = mysqli_query($conn, $sql);
 ?>
 
 <?php include '../template/header.php' ?>
@@ -14,11 +11,11 @@
                 <div class="card">
                     <div class="card-header pb-0">
                         <div class="d-flex align-items-center">
-                            <p class="mb-0">Add User</p>
+                            <p class="mb-0">Add Manager</p>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="text-uppercase text-sm">User Data</p>
+                        <p class="text-uppercase text-sm">Manager Data</p>
                         <form action="action_add.php" method="post">
                             <div class="row">
                                 <div class="form-group">
@@ -40,17 +37,16 @@
                                         required>
                                 </div>
                             </div>
+                            <hr class="horizontal dark">
+                            <div class="row">
+                                <div class="col-md">
+                                    <button class="btn btn-primary btn-sm ms-auto float-end">Add</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <hr class="horizontal dark">
-                    <div class="row">
-                        <div class="col-md">
-                            <button class="btn btn-primary btn-sm ms-auto float-end">Add</button>
-                        </div>
-                    </div>
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
 
-    <?php include '../template/footer.php' ?>
+        <?php include '../template/footer.php' ?>

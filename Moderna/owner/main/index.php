@@ -34,7 +34,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Corporate:</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Manager:</p>
                                     <h5 class="font-weight-bolder">
                                         $53,000
                                     </h5>
@@ -43,7 +43,7 @@
                             <div class="col-4 text-end">
                                 <div
                                     class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                                    <i class="fa fa-building text-lg opacity-10" aria-hidden="true"></i>
+                                    <i class="fa fa-user text-lg opacity-10" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Users:</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Employee:</p>
                                     <h5 class="font-weight-bolder">
                                         2,300
                                     </h5>
@@ -78,7 +78,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Contact<br>us</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Task</p>
                                     <h5 class="font-weight-bolder">
                                         +3,462
                                     </h5>
@@ -87,7 +87,7 @@
                             <div class="col-4 text-end">
                                 <div
                                     class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                                    <i class="fa fa-address-book text-lg opacity-10" aria-hidden="true"></i>
+                                    <i class="fa fa-book text-lg opacity-10" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
