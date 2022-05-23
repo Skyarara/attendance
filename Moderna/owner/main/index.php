@@ -36,7 +36,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Manager:</p>
                                     <h5 class="font-weight-bolder">
-                                        $53,000
+                                        3
                                     </h5>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Employee:</p>
                                     <h5 class="font-weight-bolder">
-                                        2,300
+                                        10
                                     </h5>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Task</p>
                                     <h5 class="font-weight-bolder">
-                                        +3,462
+                                        2
                                     </h5>
                                 </div>
                             </div>
