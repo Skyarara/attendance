@@ -61,7 +61,9 @@
                                     <?= $data['subject'] ?>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <?= $data['message'] ?>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a class="btn btn-primary" href="info.php?id=<?= $data['id_contact_us'] ?>">Info</a>
+                                    </div>
                                 </td>
                                 <td class="align-middle text-center">
                                     <div class="btn-group" role="group" aria-label="Basic example">
