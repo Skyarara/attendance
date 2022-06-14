@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION['login'])){
+    header("location: ../../auth/sign-in.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

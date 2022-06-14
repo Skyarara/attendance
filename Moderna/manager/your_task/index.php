@@ -18,22 +18,6 @@ include '../template/header.php'
 
 <main class="main-content position-relative border-radius-lg ">
     <div class="container-fluid py-4">
-        <div class="card shadow-lg mx-4 mb-3">
-            <div class="card-body p-3">
-                <div class="row gx-4">
-                    <div class="col-auto my-auto">
-                        <div class="h-100">
-                            <h5 class="mb-1">
-                                Welcome <b><?= $_SESSION['data']['name'] ?></b>
-                            </h5>
-                            <p class="mb-0 font-weight-bold text-sm">
-                                Position: <b><?= $_SESSION['data']['role'] ?></b>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="card mb-4">
             <div class="card-header pb-0">
                 <h6>Task</h6>

@@ -1,41 +1,25 @@
-<?php require_once '../../DB/conn.php'; 
-include '../template/header.php' 
-?>
-<?php include '../template/sidebar.php' ?>
 <?php 
-    // $corporate = $_SESSION['corporate'];
-    $id_user = $_SESSION['data']['id'];
+    require_once '../../DB/conn.php';
+
+    $corporate = $_SESSION['corporate'];
     $i = 1;
     $sql = "SELECT * FROM task 
     JOIN status ON task.id_status = status.id_status 
     JOIN detail_task ON detail_task.id_task = task.id_task
     JOIN corporate_employee ON corporate_employee.id_corporate_employee = detail_task.id_worker
-    WHERE corporate_employee.id_corporate_employee='$id_user'
+    WHERE corporate_employee.id_corporate='$corporate'
     GROUP BY task.id_task";
     $query = mysqli_query($conn,$sql);
 ?>
 
+<?php include '../template/header.php' ?>
+<?php include '../template/sidebar.php' ?>
 
 <main class="main-content position-relative border-radius-lg ">
     <div class="container-fluid py-4">
-        <div class="card shadow-lg mx-4 mb-3">
-            <div class="card-body p-3">
-                <div class="row gx-4">
-                    <div class="col-auto my-auto">
-                        <div class="h-100">
-                            <h5 class="mb-1">
-                                Welcome <b><?= $_SESSION['data']['name'] ?></b>
-                            </h5>
-                            <p class="mb-0 font-weight-bold text-sm">
-                                Position: <b><?= $_SESSION['data']['role'] ?></b>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="card mb-4">
             <div class="card-header pb-0">
+                <a href="add.php" class="btn btn-primary float-end">New Task</a>
                 <h6>Task</h6>
             </div>
             <div class="card-body">
@@ -93,10 +77,37 @@ include '../template/header.php'
                                 </td>
                                 <td class="align-middle text-center">
                                     <div class="btn-group" role="group" aria-label="Basic example">
+                                        <?php if($data['id_status'] == 1): ?>
                                         <a class="btn btn-info" href="info.php?id=<?= $data['id_task'] ?>">Info</a>
-                                        <?php if($data['id_status'] != 1): ?>
+                                        <a class="btn btn-danger" href="action_delete.php?id=<?= $data['id_task'] ?>"
+                                            onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                        <?php endif; ?>
+                                        <?php if($data['id_status'] == 2): ?>
+                                        <a class="btn btn-warning" href="edit.php?id=<?= $data['id_task'] ?>">Edit</a>
+                                        <a class="btn btn-info" href="info.php?id=<?= $data['id_task'] ?>">Info</a>
                                         <a class="btn btn-success"
-                                            href="submit.php?id=<?= $data['id_task'] ?>">Submit</a>
+                                            href="status.php?id=<?= $data['id_task'] ?>&act=accept"
+                                            onclick="return confirm('Are you sure you want to accept this item?');">Accept</a>
+                                        <a class="btn btn-danger" href="action_delete.php?id=<?= $data['id_task'] ?>"
+                                            onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                        <?php endif; ?>
+                                        <?php if($data['id_status'] == 3): ?>
+                                        <a class="btn btn-warning" href="edit.php?id=<?= $data['id_task'] ?>">Edit</a>
+                                        <a class="btn btn-info" href="info.php?id=<?= $data['id_task'] ?>">Info</a>
+                                        <a class="btn btn-danger"
+                                            href="status.php?id=<?= $data['id_task'] ?>&act=reject"
+                                            onclick="return confirm('Are you sure you want to reject this item?');">Reject</a>
+                                        <a class="btn btn-success"
+                                            href="status.php?id=<?= $data['id_task'] ?>&act=accept"
+                                            onclick="return confirm('Are you sure you want to accept this item?');">Accept</a>
+                                        <a class="btn btn-danger" href="action_delete.php?id=<?= $data['id_task'] ?>"
+                                            onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                        <?php endif; ?>
+                                        <?php if($data['id_status'] == 4): ?>
+                                        <a class="btn btn-warning" href="edit.php?id=<?= $data['id_task'] ?>">Edit</a>
+                                        <a class="btn btn-info" href="info.php?id=<?= $data['id_task'] ?>">Info</a>
+                                        <a class="btn btn-danger" href="action_delete.php?id=<?= $data['id_task'] ?>"
+                                            onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                                         <?php endif; ?>
                                     </div>
                                 </td>

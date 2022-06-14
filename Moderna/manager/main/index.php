@@ -3,19 +3,24 @@
 
     $i = 1;
     $sql = "SELECT * FROM user JOIN role ON role.id_role = user.id_role";
-    $query = mysqli_query($conn,$sql);
+    $query = mysqli_query($conn,$sql);    
 
-    $sql2 = "SELECT COUNT(id_user) AS 'user_count' FROM user";
+    $id_corp = $_SESSION['corporate'];  
+    $id_manager = $_SESSION['data']['id'];
+
+    $sql2 = "SELECT COUNT(id_corporate_employee) AS count_employee FROM corporate_employee WHERE id_corporate='$id_corp'";
     $query2 = mysqli_query($conn,$sql2);
-    $user = mysqli_fetch_assoc($query2);
+    $employee = mysqli_fetch_assoc($query2);
 
-    $sql3 = "SELECT COUNT(id_user) AS 'corp_count' FROM user WHERE id_role=2";
+    $sql3 = "SELECT COUNT(DISTINCT id_task) AS task_count FROM detail_task WHERE id_worker IN (SELECT
+    id_corporate_employee
+    FROM corporate_employee WHERE id_corporate='$id_corp')";
     $query3 = mysqli_query($conn,$sql3);
-    $corp = mysqli_fetch_assoc($query3);
+    $task = mysqli_fetch_assoc($query3);
 
-    $sql4 = "SELECT COUNT(id_contact_us) AS 'contact_count' FROM contact_us";
+    $sql4 = "SELECT COUNT(DISTINCT id_task) AS task_count FROM detail_task WHERE id_worker='$id_manager'";
     $query4 = mysqli_query($conn,$sql4);
-    $contact = mysqli_fetch_assoc($query4);
+    $your_task = mysqli_fetch_assoc($query4);
 ?>
 
 <?php include '../template/header.php' ?>
@@ -46,16 +51,16 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Corporate:</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Employee:</p>
                                     <h5 class="font-weight-bolder">
-                                        <?= $corp['corp_count'] ?>
+                                        <?= $employee['count_employee'] ?>
                                     </h5>
                                 </div>
                             </div>
                             <div class="col-4 text-end">
                                 <div
                                     class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                                    <i class="fa fa-building text-lg opacity-10" aria-hidden="true"></i>
+                                    <i class="fa fa-user text-lg opacity-10" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
@@ -68,9 +73,9 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Users:</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Task:</p>
                                     <h5 class="font-weight-bolder">
-                                        <?= $user['user_count'] ?>
+                                        <?= $task['task_count'] ?>
                                     </h5>
                                 </div>
                             </div>
@@ -90,16 +95,16 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Contact<br>in:</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total<br>Your Task</p>
                                     <h5 class="font-weight-bolder">
-                                        <?= $contact['contact_count'] ?>
+                                        <?= $your_task['task_count'] ?>
                                     </h5>
                                 </div>
                             </div>
                             <div class="col-4 text-end">
                                 <div
                                     class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                                    <i class="fa fa-address-book text-lg opacity-10" aria-hidden="true"></i>
+                                    <i class="fa fa-book text-lg opacity-10" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>

@@ -12,6 +12,14 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
+<?php
+session_start();
+  if(isset($_SESSION['login'])){
+    header("location:javascript://history.go(-1)");
+    exit;
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,6 +52,7 @@
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
               <div class="card card-plain">
                 <div class="card-header pb-0 text-start">
+                  <a href="../index.html" style="color:blue;"><i>Back</i></a>
                   <h4 class="font-weight-bolder">Sign In</h4>
                   <p class="mb-0">Enter your username and password to sign in</p>
                 </div>

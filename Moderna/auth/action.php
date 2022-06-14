@@ -37,7 +37,12 @@ if($data){
             header("Location: ../employee/index.php");
             break;
         case "manager":
-            header("Location: ../manager/index.html");
+            $id = $data['id_user'];
+            $sql2 = "SELECT id_corporate FROM corporate_employee WHERE id_corporate_employee='$id'";
+            $query2 = mysqli_query($conn,$sql2);
+            $data_corp = mysqli_fetch_assoc($query2);
+            $_SESSION['corporate'] = $data_corp['id_corporate'];
+            header("Location: ../manager/index.php");
             break;
         default:
             echo "<script>

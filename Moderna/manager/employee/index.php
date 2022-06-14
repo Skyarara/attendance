@@ -1,11 +1,11 @@
 <?php 
     require_once '../../DB/conn.php';
 
-    
     $i = 1;
-    $id_admin = $_SESSION['data']['id'];
-    $sql = "SELECT * FROM user JOIN role ON role.id_role = user.id_role WHERE NOT id_user
-    ='$id_admin' AND role_name ='admin'";
+    $corporate = $_SESSION['corporate'];
+    $sql = "SELECT * FROM corporate_employee 
+            JOIN user ON user.id_user = corporate_employee.id_corporate_employee
+            WHERE id_role='4' AND id_corporate='$corporate'";
     $query = mysqli_query($conn,$sql);
 ?>
 
@@ -16,8 +16,8 @@
     <div class="container-fluid py-4">
         <div class="card mb-4">
             <div class="card-header pb-0">
-                <a href="add.php" class="btn btn-primary float-end">New User</a>
-                <h6>User</h6>
+                <a href="add.php" class="btn btn-primary float-end">New Employee</a>
+                <h6>Employee</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive p-0">
@@ -37,10 +37,6 @@
                                 </th>
                                 <th
                                     class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                    Role
-                                </th>
-                                <th
-                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     Action
                                 </th>
                             </tr>
@@ -56,9 +52,6 @@
                                 </td>
                                 <td class="align-middle text-center">
                                     <?= $data['username'] ?>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <?= $data['role_name'] ?>
                                 </td>
                                 <td class="align-middle text-center">
                                     <div class="btn-group" role="group" aria-label="Basic example">
